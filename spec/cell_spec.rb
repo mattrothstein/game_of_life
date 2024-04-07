@@ -1,10 +1,11 @@
 require 'cell'
 require 'row'
+require 'board'
 
 RSpec.describe Cell do
   subject     { described_class.new(0, 0, row) }
 
-  let(:row)   { Row.new(board.state, 0 board) }
+  let(:row)   { Row.new(board.state[0], 0, board) }
   let(:board) { Board.new(state) }
 
   let(:state) do
@@ -42,7 +43,7 @@ RSpec.describe Cell do
 
   describe '#evolve' do
     it 'returns evolved_value of the cell' do
-      expect(subject.next).to eq 1
+      expect(subject.evolve).to eq 0
     end
   end
 end
